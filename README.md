@@ -1,6 +1,3 @@
-# NSAP-Eligibility-Prediction-IBM-Project
-Machine Learning project to classify NSAP welfare schemes using demographic data.
-
 # NSAP Scheme Eligibility Prediction using ML
 
 This project was developed as part of the **AICTE + IBM SkillsBuild + Edunet Foundation Internship (2025)**.  
