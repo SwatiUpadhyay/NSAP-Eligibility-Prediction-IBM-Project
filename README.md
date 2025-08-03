@@ -57,8 +57,6 @@ The model performs excellently across all three scheme types.
 ## Files Included
 
 - `NSAP_ML_Notebook.ipynb` – Main Jupyter Notebook
-- `nsapallschemes.csv` – Dataset
-- `NSAP_Eligibility_Prediction_Report.pdf` – Notebook exported as PDF
 - `ProjectPresentation.pptx` – Final presentation slides
 - `LICENSE` – MIT License with custom attribution
 
