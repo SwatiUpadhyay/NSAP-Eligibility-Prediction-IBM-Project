@@ -1,86 +1,120 @@
-# NSAP Scheme Eligibility Prediction using ML
+# NSAP Scheme Eligibility Prediction Using Machine Learning
 
 This project was developed as part of the **AICTE + IBM SkillsBuild + Edunet Foundation Internship (2025)**.  
-It uses Machine Learning to classify the correct **NSAP (National Social Assistance Programme)** scheme based on district-wise demographic features.
+It leverages machine learning to classify beneficiaries under India's **National Social Assistance Programme (NSAP)** into the most appropriate welfare schemes using district-level demographic data.
 
 ---
 
 ## Objective
 
-To build a classification model that predicts which social security scheme a beneficiary is eligible for:
-- `IGNOAPS` – Old Age Pension
-- `IGNWPS` – Widow Pension
-- `IGNDPS` – Disability Pension
+To automate the classification of welfare scheme eligibility under NSAP using a data-driven approach.  
+The model predicts eligibility for the following social assistance schemes:
+
+- **IGNOAPS** — Indira Gandhi National Old Age Pension Scheme  
+- **IGNWPS** — Indira Gandhi National Widow Pension Scheme  
+- **IGNDPS** — Indira Gandhi National Disability Pension Scheme  
+
+---
+
+## Problem Statement
+
+Manual eligibility verification for NSAP schemes is time-consuming, inconsistent, and difficult to scale across large populations.  
+This project addresses the challenge by applying supervised machine learning to predict eligibility based on gender, caste, Aadhaar access, and mobile availability data.
+
+---
+
+## Proposed Solution
+
+The system utilizes a Random Forest classifier trained on demographic and beneficiary-related features to predict the correct scheme class for an applicant.  
+The model is integrated within a Jupyter Notebook hosted on IBM Watson Studio under IBM Cloud, following the complete ML pipeline: data preprocessing, model training, evaluation, and reporting.
 
 ---
 
 ## Technologies Used
 
-- IBM Cloud (Cloud Pak for Data / Watson Studio)
-- Python (Pandas, Scikit-learn)
-- Jupyter Notebooks
-- Data Visualization
-- RandomForestClassifier
+- **IBM Cloud (Lite Account)**
+  - Watson Studio / Cloud Pak for Data
+  - IBM Object Storage for dataset handling
+
+- **Languages & Libraries**
+  - Python 3.11
+  - Scikit-learn (RandomForestClassifier)
+  - Pandas, NumPy, Matplotlib
+  - Jupyter Notebook
 
 ---
 
-## Dataset Used
+## Dataset Information
 
-- **Name**: `nsapallschemes.csv`
-- **Source**: Kaggle (provided by AICTE/IBM)
-- **Records**: 2156 rows × 16 columns
-- **Features**: Beneficiary counts by gender, caste, Aadhaar availability, mobile access, etc.
+- **File Name**: `nsapallschemes.csv`  
+- **Records**: 2156 rows × 16 columns  
+- **Features**:  
+  - Gender-based counts (`totalmale`, `totalfemale`, `totaltransgender`)  
+  - Social categories (`totalsc`, `totalst`, `totalobc`, `totalgen`)  
+  - Aadhaar and mobile penetration (`totalaadhaar`, `totalmobilenumber`)  
+  - State and district codes
 
----
-
-## Model Details
-
-- **Algorithm**: Random Forest Classifier
-- **Training Split**: 80% training / 20% testing
-- **Accuracy**: 97.2%
-- **Metrics Used**: Accuracy, Precision, F1-score, Confusion Matrix
+> *Note: This dataset was provided as part of the IBM SkillsBuild Internship. It is not publicly hosted on Kaggle.*
 
 ---
 
-## Results
+## Model Overview
 
-| Metric        | Score |
-|---------------|--------|
-| Accuracy      | 97.2%  |
-| Precision     | 96–99% |
-| F1-Score      | 97%+   |
+- **Algorithm**: Random Forest Classifier  
+- **Data Split**: 80% Training / 20% Testing  
+- **Accuracy Achieved**: **97.2%**
 
-The model performs excellently across all three scheme types.
+### Evaluation Metrics
+
+| Metric        | Score     |
+|---------------|-----------|
+| Accuracy      | 97.2%     |
+| Precision     | 96–99%    |
+| F1 Score      | >97%      |
+| Confusion Matrix | Very low misclassification across classes |
+
+The model demonstrates strong generalization and high confidence in scheme classification across all three labels.
 
 ---
 
-## Files Included
+## How It Works
 
-- `NSAP_ML_Notebook.ipynb` – Main Jupyter Notebook
-- `ProjectPresentation.pptx` – Final presentation slides
-- `LICENSE` – MIT License with custom attribution
+1. **Data Ingestion**: Reads `.csv` data directly from IBM Object Storage  
+2. **Preprocessing**: Feature selection, null checks, label encoding  
+3. **Modeling**: Fits a Random Forest Classifier with default hyperparameters  
+4. **Evaluation**: Prints classification report, confusion matrix, and accuracy score  
+5. **Output**: Displays predictions and model evaluation summary in notebook
 
 ---
 
-## Disclaimer
+## Project Files
 
-> This project was submitted by **Swati Upadhyay** as part of the IBM SkillsBuild Internship.  
-> Copying, redistributing, or submitting without proper attribution is prohibited.
+- `NSAP_ML_Notebook.ipynb` — Main notebook with all development steps  
+- `ProjectPresentation.pptx` — Slide deck for submission  
+- `LICENSE` — MIT License with custom attribution  
 
 ---
 
 ## Author
 
 **Swati Upadhyay**  
-AI & Cloud Intern | BCA Student | IBM SkillsBuild Intern  
- `uswati1123@gmail.com`  
- [LinkedIn Profile](https://www.linkedin.com/in/swati-upadhyay-b042241a4/)
+BCA Student, Vaugh Institute of Agriculture Engineering and Technology  
+IBM SkillsBuild Cloud & AI Intern – 2025 Cohort  
+
+📧 uswati1123@gmail.com  
+🔗 [LinkedIn Profile](https://www.linkedin.com/in/swati-upadhyay-b042241a4/)
 
 ---
 
-## Status
+## Repository Status
 
-**Project Completed** and Submitted  
-IBM Cloud Workspace used  
-Submission Deadline: 4th August 2025
+✅ **Project Completed and Submitted** under AICTE–IBM–Edunet Internship  
+🗓️ Submission Deadline: August 4, 2025  
+☁️ Developed entirely on IBM Cloud (Watson Studio)
 
+---
+
+## Licensing
+
+This project is released under the [MIT License](./LICENSE).  
+**Reproduction, redistribution, or submission without author attribution is strictly prohibited.**
